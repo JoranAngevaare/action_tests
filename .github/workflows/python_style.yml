@@ -1,4 +1,4 @@
-ame: Python Pull Request Workflow
+name: Python Pull Request Workflow
 on: [pull_request]
 jobs:
 
