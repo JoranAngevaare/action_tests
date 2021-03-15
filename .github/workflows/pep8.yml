@@ -23,6 +23,14 @@ jobs:
         os: ["ubuntu-latest"]
         python-version: ["3.8"]
     steps:
+#      - uses: actions/checkout@v2
+#      - name: Python style check
+#        uses: bulv1ne/python-style-check@v0.3
+      - name: Python quality and format checker
+        uses: konstruktoid/action-pylint@v0.0.5
+
       - uses: actions/checkout@v2
-      - name: Python style check
-        uses: bulv1ne/python-style-check@v0.3
+      - name: run YAPF to test if python code is correctly formatted
+        uses: AlexanderMelde/yapf-action@master
+        with:
+          args: --verbose
