@@ -1,4 +1,9 @@
 import core_actions
 
+
 def test_core():
-    res = core_actions.dummy_list
+    m = 10
+    res = core_actions.dummy_list(m)
+    assert m == 10
+    assert len(res) == m + 1
+    assert max(res) == m
