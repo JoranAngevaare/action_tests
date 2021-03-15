@@ -8,4 +8,5 @@ def stupid_func():
 
 def a_new_stupid_func():
     """A function with bad style"""
-    a = b = 1 ; print(b)
+    a = b = 1 ;
+    print(b)
