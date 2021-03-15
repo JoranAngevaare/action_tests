@@ -6,7 +6,7 @@ jobs:
     name: Quality check
     runs-on: ubuntu-18.04
     steps:
-      - uses: actions/checkout@2
+      - uses: actions/checkout@v2
       - name: Set up Python
         uses: actions/setup-python@master
         with:
@@ -15,9 +15,8 @@ jobs:
         run: |
           pip install pytest
           pytest
-      - name: wemake-python-styleguide
+      - name: Wemake Python Stylguide
         uses: wemake-services/wemake-python-styleguide@0.15.2
-
         continue-on-error: true
         with:
           reporter: 'github-pr-review'
