@@ -1,0 +1,27 @@
+# Test package every time
+
+name: Pep8
+
+# Controls when the action will run.
+
+# Trigger this code when a new release is published
+on:
+  workflow_dispatch:
+  release:
+    types: [created]
+  pull_request:
+  push:
+    branches:
+      - master
+
+jobs:
+  test_package:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: "ubuntu-latest"
+        python-version: "3.8"
+    steps:
+  - name: Python Style Checker
+    uses: andymckay/pycodestyle-action@0.1.3
