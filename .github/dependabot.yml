@@ -1,5 +1,4 @@
 # Set update schedule for GitHub Actions
-
 version: 2
 updates:
 
@@ -8,3 +7,7 @@ updates:
     schedule:
       # Check for updates to GitHub Actions every weekday
       interval: "daily"
+      time: "12:00"
+    # Raise all npm pull requests with an assignee
+    assignees:
+      - jorana
