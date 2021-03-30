@@ -1,19 +1,5 @@
 # Set update schedule for GitHub Actions
 
-name: Pytest
-
-# Controls when the action will run.
-
-# Trigger this code when a new release is published
-on:
-  workflow_dispatch:
-  release:
-    types: [created]
-  pull_request:
-  push:
-    branches:
-      - master
-
 version: 2
 updates:
 
@@ -21,4 +7,4 @@ updates:
     directory: "/"
     schedule:
       # Check for updates to GitHub Actions every weekday
-      interval: "weekly"
+      interval: "daily"
