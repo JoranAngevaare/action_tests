@@ -1,7 +1,6 @@
 # Set update schedule for GitHub Actions
 version: 2
 updates:
-
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
@@ -11,3 +10,12 @@ updates:
     # Raise all npm pull requests with an assignee
     assignees:
       - jorana
+  - package-ecosystem: "pip"
+    directory: "/extra_requirements"
+    schedule:
+      # Check for updates to requirements every day
+      interval: "daily"
+    open-pull-requests-limit: 5
+    assignees:
+      - jorana
+
