@@ -6,7 +6,7 @@ with open('requirements.txt') as f:
         r.split('/')[-1] if r.startswith('git+') else r
         for r in f.read().splitlines()]
 
-with open('extra_requirements/requirements.txt') as f:
+with open('extra_requirements/requirements-tests.txt') as f:
     extra_requires = [
         r.split('/')[-1] if r.startswith('git+') else r
         for r in f.read().splitlines()]
