@@ -15,15 +15,15 @@ jobs:
         run: |
           python setup.py test
       - name: Wemake Python Stylguide
-        if:  on.pull_request == 'created'
-        uses: wemake-services/wemake-python-styleguide@0.15.2
+        if:  on.pull_request == 'opened'
+        uses: wemake-services/wemake-python-styleguide@0.15.3
         continue-on-error: true
         with:
           reporter: 'github-pr-review'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Wemake Python Stylguide
-        if:  on.pull_request != 'created'
+        if:  on.pull_request != 'opened'
         uses: wemake-services/wemake-python-styleguide@0.15.2
         continue-on-error: true
         with:
