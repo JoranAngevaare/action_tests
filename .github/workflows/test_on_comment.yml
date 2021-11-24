@@ -18,7 +18,7 @@ on:
 
 jobs:
   test_package:
-    if: contains(github.event.comment.html\_url, '/pull/') && contains(github.event.comment.body, '/run_test_run')
+    if: ${{ github.event_name == 'workflow_dispatch' || (github.event.issue.pull_request && contains( github.event.comment.body, '/run_test_run' )) }}
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
