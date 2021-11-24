@@ -16,7 +16,7 @@ on:
 
 jobs:
   test_package:
-    if: contains(github.event.comment.body, '/run_test_run')    # check if the comments come from pull request, exclude those from issue.
+    if: contains(github.event.comment.body, 'test')    # check if the comments come from pull request, exclude those from issue.
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: true
