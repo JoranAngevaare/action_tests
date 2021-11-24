@@ -1,0 +1,39 @@
+# 
+
+# Test package every time
+
+name: Pytest on summon
+
+# Controls when the action will run.
+
+# Trigger this code when a new release is published
+on:
+  workflow_dispatch:
+  release:
+    types: [created]
+  issue_comment:
+    types: [created, edited]
+
+jobs:
+  test_package:
+    if: contains(github.event.comment.body, '/run_test_run')    # check if the comments come from pull request, exclude those from issue.
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: ["ubuntu-latest"]
+        python-version: ["3.8"]
+    steps:
+      - name: Setup python
+        uses: actions/setup-python@v2 # https://github.com/marketplace/actions/setup-miniconda
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Checkout repo
+        uses: actions/checkout@v2.3.5
+      - name: Install python dependencies
+        uses: py-actions/py-dependency-install@v2.1.0
+      - name: Install dependencies
+        run: |
+          python setup.py test
+      - name: goodbye
+        run: echo goodbye
