@@ -16,7 +16,7 @@ on:
 
 jobs:
   test_package:
-    if: ${{ github.event_name == 'workflow_dispatch' || github.event_name == 'release'  || (github.event.issue.pull_request && contains( github.event.comment.body, '/run_test_run' )) }}
+    if: contains(github.event.comment.html_url, '/run_test_run')    # check if the comments come from pull request, exclude those from issue.
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
