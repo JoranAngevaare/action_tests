@@ -1,8 +1,9 @@
 name: pull request comment
 on:
   pull_request:
-  issue_comment:                                     
-    types: [created, edited, deleted]
+    types: [opened]
+  issue_comment:
+    types: [created]
 
 jobs:
   deploy:
