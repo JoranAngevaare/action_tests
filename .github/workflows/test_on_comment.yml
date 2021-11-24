@@ -38,6 +38,9 @@ jobs:
       - name: goodbye
         run: echo goodbye
       - name: post
+        env:
+          URL: ${{ github.event.issue.comments_url }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           curl \
             -X POST \
