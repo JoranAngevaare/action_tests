@@ -1,5 +1,5 @@
 def dummy_list(_max):
-    return [i for i in range(_max+1)]
+    return list(range(_max+1))
 
 
 def stupid_func():
