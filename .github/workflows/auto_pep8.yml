@@ -8,18 +8,27 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2.4.0
-        with:
-          token: ${{ secrets.PEP8_REPO_ACCESS_TOKEN }}
-          ref: ${{ github.head_ref }}
+#         with:
+#           token: ${{ secrets.PEP8_REPO_ACCESS_TOKEN }}
+#           ref: ${{ github.head_ref }}
       - name: autopep8
         id: autopep8
         uses: peter-evans/autopep8@v1.2.1
         with:
           args: --exit-code --recursive --in-place --aggressive --aggressive .
-      - name: Commit autopep8 changes
-        if: steps.autopep8.outputs.exit-code == 2
-        run: |
-          git config --global user.name 'Joran angevaare'
-          git config --global user.email 'jorana@nikhef.nl'
-          git commit -am "Automated autopep8 fixes"
-          git push
+#       - name: Commit autopep8 changes
+#         if: steps.autopep8.outputs.exit-code == 2
+#         run: |
+#           git config --global user.name 'Joran angevaare'
+#           git config --global user.email 'jorana@nikhef.nl'
+#           git commit -am "Automated autopep8 fixes"
+#           git push
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          commit-message: autopep8 action fixes
+          title: Fixes by autopep8 action
+          body: This is an auto-generated PR with fixes by autopep8.
+          labels: autopep8, automated pr
+          reviewers: peter-evans
+          branch: autopep8-patches
