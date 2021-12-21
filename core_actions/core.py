@@ -10,3 +10,8 @@ def a_new_stupid_func():
     """A function with bad style"""
     a = b = 1 ;
     print(b)
+
+def let_s_do_SOMETHING():
+    """ A b
+    ldy fommted docstring that is wayyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy to long"""
+    pass
