@@ -8,5 +8,6 @@ def test_core():
     assert len(res) == m + 1
     assert max(res) == m
 
+
 def test_bla():
     print('bla')
