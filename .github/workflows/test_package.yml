@@ -33,6 +33,8 @@ jobs:
         uses: py-actions/py-dependency-install@v3
       - name: Install dependencies
         run: |
+          git clone https://github.com/NESTCollaboration/nestpy.git
+          pip install -e nestpy
           python setup.py test
       - name: goodbye
         run: echo goodbye
