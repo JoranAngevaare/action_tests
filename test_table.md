@@ -1,3 +1,3 @@
-| <div style="width:50px">File-name</div> | Short description             |Used for       | Link      | Responsible |
+| <span style="display: inline-block; width:500px">text</span> | Short description             |Used for       | Link      | Responsible |
 | ---------                                | ---------                     | ---------     |---------  | ----------- |
-| blaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa| bla bla | bla | bla | bla bla|
+| 012345678901011121314151617181920| bla bla | bla | bla | bla bla|
