@@ -9,4 +9,4 @@ jobs:
       run: |
         source /cvmfs/xenon.opensciencegrid.org/releases/nT/development/setup.sh
         python -c "print('hello XENON!')"
-        straxen-print_versions strax
+        python -c "import strax; print(f'Strax {strax.__version__} from {strax}')"
