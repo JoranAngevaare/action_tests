@@ -10,3 +10,5 @@ jobs:
         ls /cvmfs/
         ls /cvmfs/xenon.opensciencegrid.org
         source /cvmfs/xenon.opensciencegrid.org/releases/nT/development/setup.sh
+        python -c "print('hello XENON!')"
+        straxen-print_versions
