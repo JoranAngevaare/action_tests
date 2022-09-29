@@ -1,0 +1,12 @@
+name: Minimal usage
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: cvmfs-contrib/github-action-cvmfs@v3
+    - name: Test CernVM-FS
+      run: |
+        ls /cvmfs/
+        ls /cvmfs/xenon.opensciencegrid.org
+        source /cvmfs/xenon.opensciencegrid.org/releases/nT/development/setup.sh
