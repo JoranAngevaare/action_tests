@@ -10,3 +10,5 @@ jobs:
         source /cvmfs/xenon.opensciencegrid.org/releases/nT/development/setup.sh
         python -c "print('hello XENON!')"
         python -c "import strax; print(f'Strax {strax.__version__} from {strax}')"
+        pip install --user git+https://github.com/JoranAngevaare/admix # temp patch
+        straxen-print_versions
