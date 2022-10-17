@@ -18,7 +18,7 @@ with open('HISTORY.md') as file:
     history = file.read()
 
 setuptools.setup(name='core_actions',
-                 version='0.0.0',
+                 version='1.0.0',
                  description='Test package for trying out new github actiosn',
                  author='Joran',
                  url='https://github.com/jorana/action_tests',
