@@ -15,7 +15,7 @@ jobs:
         run: |
           python setup.py test
       - name: Wemake Python Stylguide
-        uses: wemake-services/wemake-python-styleguide@0.16.1
+        uses: wemake-services/wemake-python-styleguide@0.18.0
         continue-on-error: true
         with:
           reporter: 'github-pr-review'
