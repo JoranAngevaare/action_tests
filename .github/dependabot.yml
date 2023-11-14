@@ -5,7 +5,7 @@ updates:
     directory: "/"
     schedule:
       # Check for updates to GitHub Actions every weekday
-      interval: "daily"
+      interval: "yearly"
       time: "12:00"
     # Raise all npm pull requests with an assignee
     assignees:
@@ -14,7 +14,7 @@ updates:
     directory: "/extra_requirements"
     schedule:
       # Check for updates to requirements every day
-      interval: "daily"
+      interval: "yearly"
     open-pull-requests-limit: 50
     assignees:
       - jorana
