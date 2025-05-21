@@ -1,0 +1,29 @@
+name: "Build environment"
+on:
+  workflow_dispatch:
+  release:
+    types: [created]
+  pull_request:
+  push:
+    branches:
+      - master
+
+jobs:
+  build_env:
+    name: "Build"
+    runs-on: "ubuntu-latest"
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: checkout test
+        uses: actions/checkout@v3
+        with:
+          repository: JoranAngevaare/test_actions
+          ssh-key: ${{ secrets.test_actions_test_token }}
+          path: test
+          ref: master
+          fetch-depth: 0
+
+      - name: List files
+        run: ls test
